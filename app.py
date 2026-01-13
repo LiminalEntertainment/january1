@@ -24,7 +24,7 @@ if "grades" not in st.session_state:
 st.subheader("Select from the following:")
 
 subject = st.selectbox("Favourite subject:", list(st.session_state.subjects.keys()))
-grades = st.selectbox("Favourite grades:", list(st.session_state.grades.keys()))
+grades = st.selectbox("Your grades:", list(st.session_state.grades.keys()))
 
 if st.button("Save"):
     st.session_state.subjects[subject] += 1
@@ -43,7 +43,7 @@ subjects_df = pd.DataFrame.from_dict(
 st.bar_chart(subjects_df)
 
 # Sports chart
-st.write("Favourite sports")
+st.write("Your grades")
 grades_df = pd.DataFrame.from_dict(
     st.session_state.grades, orient="index", columns=["Count"]
 )
