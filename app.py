@@ -39,7 +39,7 @@ st.write("Favourite subjects")
 colors_df = pd.DataFrame.from_dict(
     st.session_state.subjects, orient="index", columns=["Брой"]
 )
-st.bar_chart(colors_df)
+st.bar_chart(subjects_df)
 
 # Графика за спортовете
 st.write("Favourite sports")
