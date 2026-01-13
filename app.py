@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-st.title("Favourite things")
+st.title("Just questions")
 
 # Initialize data
 if "subjects" not in st.session_state:
