@@ -26,7 +26,7 @@ subjects = st.selectbox("Favourite subject:", list(st.session_state.subjects.key
 sport = st.selectbox("Favourite sports:", list(st.session_state.sports.keys()))
 
 if st.button("Save"):
-    st.session_state.subjects[color] += 1
+    st.session_state.subjects[subjects] += 1
     st.session_state.sports[sport] += 1
     st.success("Saved")
 
