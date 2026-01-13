@@ -12,22 +12,23 @@ if "subjects" not in st.session_state:
         "Biology": 0
     }
 
-if "sports" not in st.session_state:
-    st.session_state.sports = {
-        "Football": 0,
-        "Basketball": 0,
-        "Volleyball": 0,
-        "Swimming": 0
+if "grades" not in st.session_state:
+    st.session_state.grades = {
+        "6": 0,
+        "5": 0,
+        "4": 0,
+        "3": 0,
+        "2": 0
     }
 
-st.subheader("Select your favourite from the following:")
+st.subheader("Select from the following:")
 
 subject = st.selectbox("Favourite subject:", list(st.session_state.subjects.keys()))
-sport = st.selectbox("Favourite sport:", list(st.session_state.sports.keys()))
+grades = st.selectbox("Favourite grades:", list(st.session_state.grades.keys()))
 
 if st.button("Save"):
     st.session_state.subjects[subject] += 1
-    st.session_state.sports[sport] += 1
+    st.session_state.sports[grades] += 1
     st.success("Saved")
 
 st.divider()
@@ -43,7 +44,7 @@ st.bar_chart(subjects_df)
 
 # Sports chart
 st.write("Favourite sports")
-sports_df = pd.DataFrame.from_dict(
-    st.session_state.sports, orient="index", columns=["Count"]
+grades_df = pd.DataFrame.from_dict(
+    st.session_state.grades, orient="index", columns=["Count"]
 )
-st.bar_chart(sports_df)
+st.bar_chart(grades_df)
