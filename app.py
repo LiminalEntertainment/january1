@@ -28,7 +28,7 @@ grades = st.selectbox("Your grades:", list(st.session_state.grades.keys()))
 
 if st.button("Save"):
     st.session_state.subjects[subject] += 1
-    st.session_state.sports[grades] += 1
+    st.session_state.grades[grades] += 1
     st.success("Saved")
 
 st.divider()
